@@ -24,3 +24,20 @@ def CalculFrequence(cheminfichier):
                 freq-=int(line[1:])
             list.append(freq)
     return list
+
+#Ou alors:
+
+def CalculrepetitionFrequence():
+    freq=CalculFrequence(nomfichier)[-1]
+    list=CalculFrequence(nomfichier)
+    while True:
+        with open("/Users/wandrille/Desktop/Programation/Python/Advent of Code/input.txt",'r') as s:
+            for line in s:
+                if line[0]=='+':
+                    freq+=int(line[1:])
+                elif line[0]=='-':
+                    freq-=int(line[1:])
+                if freq in list:
+                    print(freq)
+                else:
+                    list.append(freq)
