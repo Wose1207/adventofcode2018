@@ -11,8 +11,8 @@ def CalculFrequence(cheminfichier):
 
 
 #Probleme 2
-def CalculFrequence(freq, set):
-    with open("/Users/wandrille/Desktop/Programation/Python/Advent of Code/1er_decembre/input.txt",'r') as s:
+def CalculFrequence(freq, set, cheminfichier="input.txt"):
+    with open(cheminfichier,'r') as s:
         for line in s:
             if line[0]=='+':
                 freq+=int(line[1:])
@@ -27,8 +27,6 @@ def CalculFrequence(freq, set):
 def RepetFreq():
     depart=0
     L=set()
-    i=0
-    while i<200:
+    while True:
         (L, depart)=CalculFrequence(depart, L)
-        i+=1
     return depart
