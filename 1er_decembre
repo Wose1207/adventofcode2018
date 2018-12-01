@@ -1,43 +1,34 @@
-def Allonge(list):
-    freq=list[-1]
+#Probleme 1
+def CalculFrequence(cheminfichier):
+    with open(cheminfichier,'r') as s:
+        for line in s:
+            if line[0]=='+':
+                freq+=int(line[1:])
+            elif line[0]=='-':
+                freq-=int(line[1:])
+    return freq
+
+
+
+#Probleme 2
+def CalculFrequence(freq, list):
     with open("/Users/wandrille/Desktop/Programation/Python/Advent of Code/input.txt",'r') as s:
         for line in s:
             if line[0]=='+':
                 freq+=int(line[1:])
             elif line[0]=='-':
                 freq-=int(line[1:])
+            if freq in list:
+                print(freq)
+                break
             list.append(freq)
-    return list
-
-def testRepet(L):
-    for i in range(len(L)):
-        if L[i] in L[:i]:
-            return L[i]
+    return (list, list[-1])
     
-def CalculFrequence(cheminfichier):
-    with open(cheminfichier,'r') as s:
-        freq, list=0, []
-        for line in s:
-            if line[0]=='+':
-                freq+=int(line[1:])
-            elif line[0]=='-':
-                freq-=int(line[1:])
-            list.append(freq)
-    return list
-
-#Ou alors:
-
-def CalculrepetitionFrequence():
-    freq=CalculFrequence(nomfichier)[-1]
-    list=CalculFrequence(nomfichier)
-    while True:
-        with open("/Users/wandrille/Desktop/Programation/Python/Advent of Code/input.txt",'r') as s:
-            for line in s:
-                if line[0]=='+':
-                    freq+=int(line[1:])
-                elif line[0]=='-':
-                    freq-=int(line[1:])
-                if freq in list:
-                    print(freq)
-                else:
-                    list.append(freq)
+def RepetFreq():
+    depart=0
+    L=[]
+    i=0
+    while i<200:
+        (L, depart)=CalculFrequence(depart, L)
+        i+=1
+    return depart
