@@ -1,9 +1,26 @@
-def CalculFrequence(cheminficher):
-    with open(cheminfichier,'r') as s:
-        i, freq=0, 0
+def Allonge(list):
+    freq=list[-1]
+    with open("/Users/wandrille/Desktop/Programation/Python/Advent of Code/input.txt",'r') as s:
         for line in s:
             if line[0]=='+':
                 freq+=int(line[1:])
             elif line[0]=='-':
                 freq-=int(line[1:])
-    return freq
+            list.append(freq)
+    return list
+
+def testRepet(L):
+    for i in range(len(L)):
+        if L[i] in L[:i]:
+            return L[i]
+    
+def CalculFrequence(cheminfichier):
+    with open(cheminfichier,'r') as s:
+        freq, list=0, []
+        for line in s:
+            if line[0]=='+':
+                freq+=int(line[1:])
+            elif line[0]=='-':
+                freq-=int(line[1:])
+            list.append(freq)
+    return list
