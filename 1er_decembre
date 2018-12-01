@@ -27,8 +27,6 @@ def CalculFrequence(freq, list):
 def RepetFreq():
     depart=0
     L=[]
-    i=0
-    while i<200:
+    while True:
         (L, depart)=CalculFrequence(depart, L)
-        i+=1
     return depart
