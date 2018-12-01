@@ -1,0 +1,21 @@
+def CalculFrequence2(s):
+    "Entrées: s(str):changement de fréquence, retourne la nouvelle fréquence"
+    assert type(s)==str
+    i, a, add, freq=0, 1 , "", 0
+    while i<(len(s)-1):
+        if s[i]=="+":
+            while s[i+a] in "1234567890":
+                add+=s[i+a]
+                a+=1
+            freq+=int(add)
+            i+=a
+            a=1
+        elif s[i]=="-":
+            while s[i+a] in "1234567890":
+                add+=s[i+a]
+                a+=1
+            freq-=int(add)
+            a, i=1, i+a
+        else:
+            a+=1
+    return freq
