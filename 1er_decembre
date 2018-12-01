@@ -1,5 +1,5 @@
-def CalculFrequence():
-    with open("/Users/wandrille/Desktop/Programation/Python/Advent of Code/input.txt",'r') as s:
+def CalculFrequence(cheminficher):
+    with open(cheminfichier,'r') as s:
         i, freq=0, 0
         for line in s:
             if line[0]=='+':
