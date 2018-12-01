@@ -11,22 +11,24 @@ def CalculFrequence(cheminfichier):
 
 
 #Probleme 2
-def CalculFrequence(freq, list):
-    with open("/Users/wandrille/Desktop/Programation/Python/Advent of Code/input.txt",'r') as s:
+def CalculFrequence(freq, set):
+    with open("/Users/wandrille/Desktop/Programation/Python/Advent of Code/1er_decembre/input.txt",'r') as s:
         for line in s:
             if line[0]=='+':
                 freq+=int(line[1:])
             elif line[0]=='-':
                 freq-=int(line[1:])
-            if freq in list:
+            if freq in set:
                 print(freq)
                 break
-            list.append(freq)
-    return (list, list[-1])
+            set.add(freq)
+    return (set, freq)
     
 def RepetFreq():
     depart=0
-    L=[]
-    while True:
+    L=set()
+    i=0
+    while i<200:
         (L, depart)=CalculFrequence(depart, L)
+        i+=1
     return depart
