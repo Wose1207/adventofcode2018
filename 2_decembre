@@ -1,6 +1,7 @@
 #Problème1
 def checksum(cheminfichier):
-    appear2, appear3, hasPair, hasTriplet=0, 0, False, False
+    appear2, appear3 = 0, 0
+    hasPair, hasTriplet = False, False
     with open(cheminfichier,'r') as s:
         for line in s:
             for i in range(len(line)):
