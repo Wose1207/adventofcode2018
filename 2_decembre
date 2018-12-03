@@ -1,0 +1,15 @@
+#Problème1
+def checksum(cheminfichier):
+    apear2, apear3, a, j=0, 0, 0, 0
+    with open(cheminfichier,'r') as s:
+        for line in s:
+            for i in range(len(line)):
+                if a==0 or j==0:
+                    if line.count(line[i])==2 and a==0:
+                        apear2+=1
+                        a+=1
+                    elif line.count(line[i])==3 and j==0:
+                        apear3+=1
+                        j+=1
+            j, a=0, 0
+    return apear2*apear3
