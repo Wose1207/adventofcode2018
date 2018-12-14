@@ -1,4 +1,4 @@
-def fileToStr(cheminFichier="/Users/wandrille/Desktop/Programation/Python/Advent of Code/5_decembre/input.txt"):
+def fileToStr(cheminFichier):
     str=""
     with open(cheminFichier, 'r') as input:
         for char in input:
